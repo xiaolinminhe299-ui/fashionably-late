@@ -1,10 +1,6 @@
 <?php
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-/*
-use App\Http\Controllers\TodoController;
-use App\Http\Controllers\CategoryController;
-/*
 
 /*
 |--------------------------------------------------------------------------
@@ -22,35 +18,17 @@ use App\Http\Controllers\CategoryController;
 });
 */
 
-// トップページのルート（GETリクエスト）
+// トップページ（入力画面）
 Route::get('/', [ContactController::class, 'index'])->name('index');
 
-// 確認画面のルート（POSTリクエスト）
+// 確認画面
 Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('confirm');
-// Thank You Page Route
-Route::post('/contact/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
-Route::get('/login', [ContactController::class, 'login'])->name('login');
-/*
+// 送信処理（データ保存してthanksページへリダイレクト）
+Route::post('/contact/thanks', [ContactController::class, 'store'])->name('store');
 
-Route::post('/todos', [TodoController::class, 'store']);
-Route::patch('/todos/update', [TodoController::class, 'update']);
-Route::delete('/todos/delete', [TodoController::class, 'destroy']);
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::post('/categories', [CategoryController::class, 'store']);
-Route::patch('/categories/update', [CategoryController::class, 'update']);
-Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
-Route::get('/todos/search', [TodoController::class, 'search']);
+// 完了画面（GETで表示）
+Route::get('/contact/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
-Route::get('/', [TodoController::class, 'index']);
-Route::get('/todos/search', [TodoController::class, 'search']);
-Route::post('/todos', [TodoController::class, 'store']);
-Route::patch('/todos/{todo}', [TodoController::class, 'update']);
-Route::delete('/todos/{todo}', [TodoController::class, 'destroy']);
-
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::post('/categories', [CategoryController::class, 'store']);
-Route::patch('/categories/update', [CategoryController::class, 'update']);
-Route::delete('/categories/destroy', [CategoryController::class, 'destroy']);
-*/
+//Route::get('/login', [ContactController::class, 'login'])->name('login');
 
