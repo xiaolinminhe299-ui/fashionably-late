@@ -1,0 +1,87 @@
+/* 全体のリセット */
+body, h1, h2, table, th, td, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-size: 16px;
+    color: #70513F;
+    line-height: 1.6;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; /* 水平方向で中央揃え */
+    align-items: center; /* 垂直方向で中央揃え */
+    min-height: 100vh; /* 画面全体の高さを確保 */
+}
+
+/* ヘッダーのスタイル */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #70513F;
+}
+
+/* メインコンテンツ中央揃え */
+main {
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* メインタイトルのスタイル */
+main h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #70513F;
+    margin-bottom: 20px;
+}
+
+/* テーブルの配置 */
+table.confirm-table {
+    width: 100%;
+    margin: 0 auto; /* テーブル全体を中央揃え */
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* セルのスタイル */
+.confirm-table th, .confirm-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.confirm-table th {
+    background-color: #a99c90;
+    font-weight: bold;
+}
+
+.confirm-table td {
+    background-color: #ffffff;
+    text-align: left; /* 左揃え */
+}
+
+/* ボタンの配置 */
+.form-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    gap: 10px; /* ボタン間隔 */
+}
+
+button {
+    background-color: #70513F;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}

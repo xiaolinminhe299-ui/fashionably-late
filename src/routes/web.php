@@ -1,6 +1,10 @@
 <?php
-
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+/*
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
+/*
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+// トップページのルート（GETリクエスト）
+Route::get('/', [ContactController::class, 'index'])->name('index');
+
+// 確認画面のルート（POSTリクエスト）
+Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('confirm');
+// Thank You Page Route
+Route::post('/contact/thanks', [ContactController::class, 'thanks'])->name('thanks');
+
+Route::get('/login', [ContactController::class, 'login'])->name('login');
+/*
+
+Route::post('/todos', [TodoController::class, 'store']);
+Route::patch('/todos/update', [TodoController::class, 'update']);
+Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
+Route::patch('/categories/update', [CategoryController::class, 'update']);
+Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
+Route::get('/todos/search', [TodoController::class, 'search']);
+
+Route::get('/', [TodoController::class, 'index']);
+Route::get('/todos/search', [TodoController::class, 'search']);
+Route::post('/todos', [TodoController::class, 'store']);
+Route::patch('/todos/{todo}', [TodoController::class, 'update']);
+Route::delete('/todos/{todo}', [TodoController::class, 'destroy']);
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store']);
+Route::patch('/categories/update', [CategoryController::class, 'update']);
+Route::delete('/categories/destroy', [CategoryController::class, 'destroy']);
+*/
+
